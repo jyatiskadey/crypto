@@ -28,7 +28,7 @@ const Landing = () => {
             {/* Logo and Title */}
             <div className="flex items-center">
               <img
-                src="/crypto-logo.png"
+                src={logo}
                 alt="Sky Wallet Logo"
                 className="h-10 w-10 mr-3"
               />
@@ -44,7 +44,7 @@ const Landing = () => {
                 About
               </a>
               <a href="#forum" className="text-gray-300 hover:text-yellow-400">
-                VIP Wallet
+              SkyWallet
               </a>
               <a href="#mining" className="text-gray-300 hover:text-yellow-400">
                 Mining Rewards
@@ -58,14 +58,10 @@ const Landing = () => {
             <div className="hidden md:flex space-x-4">
               <Link to="/login">
                 <button className="px-4 py-2 bg-yellow-400 text-blue-900 hover:bg-yellow-300 rounded">
-                  Log In
-                </button>
-              </Link>
-              <Link to="/signup">
-                <button className="px-4 py-2 bg-yellow-400 text-blue-900 hover:bg-yellow-300 rounded">
                   Sign Up
                 </button>
               </Link>
+           
             </div>
 
             {/* Mobile Menu Button */}
@@ -126,7 +122,7 @@ const Landing = () => {
               About
             </a>
             <a href="#forum" className="block hover:text-yellow-400">
-              VIP Wallet
+              SKY Wallet
             </a>
             <a href="#mining" className="block hover:text-yellow-400">
               Mining Rewards
@@ -136,12 +132,13 @@ const Landing = () => {
             </a>
             <Link to="/login">
               <button className="w-full px-4 py-2 bg-gray-800 text-gray-300 hover:bg-yellow-400 hover:text-blue-900 rounded">
-                Login
+                Sign Up
               </button>
             </Link>
-            <Link to="/signup">
+           
+            <Link to="/profile">
               <button className="w-full px-4 py-2 bg-yellow-400 text-blue-900 hover:bg-yellow-300 rounded">
-                Sign Up
+                Profile
               </button>
             </Link>
           </div>
@@ -166,7 +163,7 @@ const Landing = () => {
           <p className="text-lg md:text-xl text-gray-300">
             Join millions of users worldwide and embrace the digital revolution. Secure, fast, and transparent.
           </p>
-          <Link to="/signup">
+          <Link to="/login">
             <button className="bg-yellow-400 text-blue-900 px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-yellow-500">
               Sign Up To Join
             </button>
@@ -185,13 +182,28 @@ const Landing = () => {
 
           {/* Logo */}
           <motion.img
-            src={logo}
-            alt="Crypto Logo"
-            className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-full z-10 shadow-lg"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
+  src={logo}
+  alt="Crypto Logo"
+  className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-full z-10 shadow-xl relative border-4 border-gray-200 hover:border-blue-400"
+  style={{
+    backgroundImage: "url('/path-to-dolla)",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "contain",
+    backgroundPosition: "center",
+    padding: "15px",
+    borderRadius: "50%",
+  }}
+  initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
+  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+  whileHover={{ scale: 1.1, rotate: 5 }}
+  transition={{
+    duration: 1.2,
+    ease: [0.25, 0.46, 0.45, 0.94], // Smooth easing curve
+    delay: 0.3,
+  }}
+/>
+
+
         </motion.div>
       </header>
 
@@ -208,13 +220,9 @@ const Landing = () => {
             className="space-y-4"
           >
             <h3 className="text-2xl font-semibold">Why Choose Sky Wallet?</h3>
+            <p className='font-bold'>One of our goals is tobring a decentralized system that makes the whole experience 100% trustfull and manipulation free.</p>
             <p>
-              Sky Wallet is designed to bring financial freedom and innovation to your fingertips. We provide secure
-              transactions, low fees, and instant transfers, ensuring your assets are always safe and accessible.
-            </p>
-            <p>
-              Whether you're a beginner or a seasoned trader, our platform is easy to use and packed with features to
-              enhance your experience.
+            SKY WALLET MINING SOLUTION is a cutting-edge cryptocurrency exchange platform committed to providing a seamless and secure trading experience for both beginners and seasoned crypto enthusiasts. Founded on the principles of transparency, innovation, and user satisfaction, we strive to be a leader in the cryptocurrency exchange space.
             </p>
           </motion.div>
           <motion.img
@@ -228,24 +236,30 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* VIP Wallet Trading Forum Section */}
+      {/* SKY Wallet Trading Forum Section */}
       <section id="forum" className="py-20 px-6 md:px-16 bg-gradient-to-b from-blue-900 to-gray-900 text-gray-200">
         <h2 className="text-4xl font-bold text-center mb-12">
           <span className="text-yellow-400">Sky Wallet</span> Trading Forum
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {["Instant Transfers", "Low Transaction Fees", "Enhanced Security"].map((title, index) => (
-            <Card
-              key={index}
-              className="bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105"
-            >
-              <CardContent className="p-8 space-y-6">
-                <h3 className="text-2xl font-semibold text-yellow-400">{title}</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Discover how <span className="text-yellow-400 font-medium">Sky Wallet</span> empowers you with unmatched convenience, safety, and affordability for your trading needs.
-                </p>
-              </CardContent>
-            </Card>
+        <Card
+        key={index}
+        className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 hover:-translate-y-2 duration-300 ease-out"
+      >
+        <CardContent className="p-8 space-y-6">
+          <h3 className="text-3xl font-semibold text-yellow-400 tracking-wide">
+            {title}
+          </h3>
+          <p className="text-gray-300 leading-relaxed">
+            Discover how <span className="text-yellow-400 font-medium">Sky Wallet</span> empowers you with unmatched convenience, safety, and affordability for your trading needs.
+          </p>
+          <button className="px-6 py-3 bg-yellow-400 text-gray-800 font-medium rounded-full shadow-md hover:shadow-lg transition-transform transform hover:scale-105">
+            Learn More
+          </button>
+        </CardContent>
+      </Card>
+      
           ))}
         </div>
       </section>
@@ -268,7 +282,7 @@ const Landing = () => {
                   <h3 className="text-xl font-semibold text-yellow-400">{pkg.title}</h3>
                   <p className="text-lg text-gray-300">{pkg.range}</p>
                   <p className="text-sm text-gray-400">Get Daily Mining Bonus {pkg.bonus}</p>
-                  <Button className="bg-yellow-400 text-blue-900 hover:bg-yellow-500 w-full">Buy Now</Button>
+                  {/* <Button className="bg-yellow-400 text-blue-900 hover:bg-yellow-500 w-full">Deposit</Button> */}
                 </CardContent>
               </Card>
             </motion.div>
